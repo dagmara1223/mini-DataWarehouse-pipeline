@@ -25,5 +25,9 @@ Dashboard / SQL analysis
 This project uses an **E-commerce dataset**, which provides a realistic business scenario for designing and evaluating Data Warehouse models.
 The dataset is particularly suitable for schema modeling (Star Schema or Snowflake Schema) due to its relational structure, including orders, customers, and products.
 The raw dataset is stored in the `data/source` directory.
-A dedicated extraction step ingests the source files and moves them into the `data/raw layer`, simulating a Data Lake ingestion process. <br>
+A dedicated extraction step ingests the source files and moves them into the `data/raw layer`, simulating a Data Lake ingestion process. <br> 
+Link to the dataset: https://www.kaggle.com/datasets/thedevastator/unlock-profits-with-e-commerce-sales-data   <br>
+Results after this step:  <br>
+<img width="381" height="125" alt="image" src="https://github.com/user-attachments/assets/dd9db1fa-a66b-4072-b5a3-74bd8cdad8f9" />
+
 
