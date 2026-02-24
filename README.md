@@ -1,2 +1,9 @@
-# mini-datawarehouse-pipeline
-End-to-end Data Warehouse pipeline built with Python and MySQL. The project simulates a real-world data engineering workflow: raw CSV data ingestion, staging layer transformations, star schema modeling (fact and dimension tables), and incremental loading with basic Change Data Capture (CDC). 
+# 📓 Overview
+This project implements an end-to-end data engineering pipeline using Python and MySQL. <br>
+It simulates a production-style architecture with: 
+- Raw data ingestion (Data Lake simulation)
+- Staging layer transformations and data validation
+- Star schema Data Warehouse (fact & dimension tables)
+- Incremental loading and basic CDC logic
+
+The goal of the project is to demonstrate data modeling, ETL design, and warehouse loading strategies in a realistic scenario. 🤖
