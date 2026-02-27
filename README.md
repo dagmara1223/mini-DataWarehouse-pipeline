@@ -31,6 +31,9 @@ Results after this step:  <br>
 <img width="381" height="125" alt="image" src="https://github.com/user-attachments/assets/dd9db1fa-a66b-4072-b5a3-74bd8cdad8f9" />
 
 ## 2️⃣ Data Transformation 
-For this step I used google-collab to better understand our data.
+Before implementing core functions in Visual Studio Code, I conducted a thorough data exploration using Google Colab to better understand the dataset's structure and quality.
+The analysis is documented in the following stages: 
+- Data Overview & Missing Values: Detailed inspection of data types and null values. <br> 
+[PANDAS_ANALYSIS/overview_and_missing_values.ipynb](PANDAS_ANALYSIS/overview_and_missing_values.ipynb)
 
 
