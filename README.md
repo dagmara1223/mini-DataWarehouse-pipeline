@@ -34,13 +34,13 @@ Results after this step:  <br>
 Before implementing core functions in Visual Studio Code, I conducted a thorough data exploration using Google Colab to better understand the dataset's structure and quality.
 The analysis is documented in the following stages: 
 - Data Overview & Missing Values: Detailed inspection of data types and null values. <br> 
-[PANDAS_ANALYSIS/overview_and_missing_values.ipynb](PANDAS_ANALYSIS/overview_and_missing_values.ipynb) <br>
-<br>
-`to be continued`
+[PANDAS_ANALYSIS/overview_and_missing_values.ipynb](PANDAS_ANALYSIS/overview_and_missing_values.ipynb)
+
+**TO BE CONTINUED**
 
 <br>
-As a result following functions were created: <br>
-- `def clean_all_nulls` function that drops all rows with null-values only
-- `lower_column` function that lowers column names
+Based on the initial analysis, I implemented several utility functions in VS Code to automate the cleaning process: <br>
+- Row Cleanup: Drops rows consisting entirely of missing values. <br>
+- Header Normalization: Converts all column names to lowercase. <br>
 
 
