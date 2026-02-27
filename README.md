@@ -30,4 +30,7 @@ Link to the dataset: https://www.kaggle.com/datasets/thedevastator/unlock-profit
 Results after this step:  <br>
 <img width="381" height="125" alt="image" src="https://github.com/user-attachments/assets/dd9db1fa-a66b-4072-b5a3-74bd8cdad8f9" />
 
+## 2️⃣ Data Transformation 
+For this step I used google-collab to better understand our data.
+
 
