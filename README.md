@@ -43,6 +43,7 @@ Based on the initial analysis, I implemented several utility functions in VS Cod
 - **Row Cleanup:** Drops rows consisting entirely of missing values. <br>
 - **Header Normalization:** Converts all column names to lowercase. <br>
 - **Selective Column Removal:** Removes specified columns only if they exist in the dataset, ensuring pipeline robustness across schema variations. <br>
-- **Schema-Aware Type Casting:** Enables controlled casting of selected columns to specified data types with configurable error handling (raise / ignore). <br>
+- **Schema-Aware Type Casting:** Enables controlled casting of selected columns to specified data types with configurable error handling. <br>
+- **Flexible Missing Data Handling**: Supports both constant value replacement and aggregation-based imputation (mean, median, sum, mode) using a configuration-driven approach.
 
 
