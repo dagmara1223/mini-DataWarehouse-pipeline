@@ -16,7 +16,7 @@ def main():
     
     transformer = DataTransformer()
     df_transformed = transformer.main_transform(df_copy)
-    print(df_transformed.head())
+    print(df_transformed.columns)
 
 if __name__=='__main__':
     main()
