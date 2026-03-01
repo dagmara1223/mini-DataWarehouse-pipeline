@@ -35,6 +35,8 @@ Before implementing core functions in Visual Studio Code, I conducted a thorough
 The analysis is documented in the following stages: 
 - Data Overview & Missing Values: Detailed inspection of data types and null values. <br> 
 [PANDAS_ANALYSIS/overview_and_missing_values.ipynb](PANDAS_ANALYSIS/overview_and_missing_values.ipynb)
+- Dealing with duplicated values and **grain** search. <br>
+[PANDAS_ANALYSIS/duplicates_analysis.ipynb](PANDAS_ANALYSIS/duplicates_analysis.ipynb)
 
 **TO BE CONTINUED**
 <br>
