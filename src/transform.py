@@ -24,6 +24,7 @@ class DataTransformer():
                                                  'ship-country': 'IN',
                                                  'ship-postal-code': 0})
         df = self.fill_missing_values_operation(df, {'amount':'mean'})
+        df = self.drop_duplicates(df, ['order id', 'sku'])
         return df
     
     def clean_all_nulls(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -108,4 +109,14 @@ class DataTransformer():
         df[column_name] = df[column_name].fillna(value)
         print(f"Filled {column_name} with value {value} Based on {operation}.")
         return df
+    
+    def drop_duplicates(self, df:pd.DataFrame, value_list: list[str]) -> pd.DataFrame:
+        for col in value_list:
+            if col not in df.columns:
+                print(f"Value {col} not in DataFrame. Skipping.")
+                return df
+        df = df.drop_duplicates(keep='first').reset_index(drop=True)
+        print(f"Duplicates dropped. Index restored.")
+        return df
+        
             
