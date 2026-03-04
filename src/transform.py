@@ -8,6 +8,7 @@ Applies predefined cleaning and schema transformations:
 - Removes selected columns if present
 - Casts columns to specified data types
 - Fills missing values using operations (mean/sum/mode/median) or specific values (ex: Unknown, 0, IR)
+- Drops selected duplicates based on grain
 '''
     
 class DataTransformer():
@@ -25,6 +26,11 @@ class DataTransformer():
                                                  'ship-postal-code': 0})
         df = self.fill_missing_values_operation(df, {'amount':'mean'})
         df = self.drop_duplicates(df, ['order id', 'sku'])
+        # df = self.retype_col_value(df, 'datetime', 'date') <------ to correct
+        df = self.retype_col_value(df, 'category', ['status', 'fulfilment', 'ship-service-level',
+                                        'category', 'size', 'courier status',
+                                        'currency', 'ship-state', 'ship-country'])
+        
         return df
     
     def clean_all_nulls(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -57,20 +63,20 @@ class DataTransformer():
 
     def retype_col_value(self, 
                         df: pd.DataFrame, new_type:str, 
-                        col_name: str,
+                        col_names: list[str],
                         errors: str = "raise") -> pd.DataFrame:
-        
-        if col_name not in df.columns:
-            print(f"Column {col_name} not in DataFrame.Skipping cast.")
-            return df 
-        
-        try:
-            df[col_name] = df[col_name].astype(new_type)
-            print(f"Column {col_name} casted to type: {new_type}")
-        except (ValueError, TypeError) as e:
-            if errors == "raise":
-                raise
-            print(f"Failed casting column '{col_name}' to {new_type}. Skipped.")
+        for col_name in col_names:
+            if col_name not in df.columns:
+                print(f"Column {col_name} not in DataFrame.Skipping cast.")
+                return df 
+            
+            try:
+                df[col_name] = df[col_name].astype(new_type)
+                print(f"Column {col_name} casted to type: {new_type}")
+            except (ValueError, TypeError) as e:
+                if errors == "raise":
+                    raise
+                print(f"Failed casting column '{col_name}' to {new_type}. Skipped.")
         
         return df
 
