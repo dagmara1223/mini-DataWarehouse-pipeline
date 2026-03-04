@@ -36,7 +36,10 @@ The analysis is documented in the following stages:
 - Data Overview & Missing Values: Detailed inspection of data types and null values. <br> 
 [PANDAS_ANALYSIS/overview_and_missing_values.ipynb](PANDAS_ANALYSIS/overview_and_missing_values.ipynb)
 - Dealing with duplicated values and **grain** search. <br>
-[PANDAS_ANALYSIS/duplicates_analysis.ipynb](PANDAS_ANALYSIS/duplicates_analysis.ipynb)
+[PANDAS_ANALYSIS/duplicates_analysis.ipynb](PANDAS_ANALYSIS/duplicates_analysis.ipynb) <br>
+- Evaluation of column cardinality and identification of fields suitable for categorical encoding to improve memory efficiency and analytical performance.  
+  Investigation of numerical distributions and categorical value patterns. <br>
+[PANDAS_ANALYSIS/dtypes_and_optimalization.ipynb](PANDAS_ANALYSIS/dtypes_and_optimalization.ipynb)
 
 **TO BE CONTINUED**
 <br>
