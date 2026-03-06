@@ -51,7 +51,9 @@ Based on the initial analysis, I implemented several utility functions in VS Cod
 - **Selective Column Removal:** Removes specified columns only if they exist in the dataset, ensuring pipeline robustness across schema variations. <br>
 - **Schema-Aware Type Casting:** Enables controlled casting of selected columns to specified data types with configurable error handling. <br>
 - **Flexible Missing Data Handling**: Supports both constant value replacement and aggregation-based imputation (mean, median, sum, mode) using a configuration-driven approach. <br>
-- **Feature Engineering and Stripping column names**: Additional features were engineered to improve analytical capabilities and prepare the dataset for dimensional modeling. These derived attributes help support time-based analysis, pricing metrics, and simplified business categorizations.
+- **Feature Engineering and Stripping column names**: New features were created to support analytical use cases and dimensional modeling.
+These transformations enable time-based analysis, pricing calculations, and simplified business categorization.
+Column names were also standardized by removing unnecessary spaces and applying a consistent naming convention.
 
 Full implementation: [src/transform.py](src/transform.py)
 
