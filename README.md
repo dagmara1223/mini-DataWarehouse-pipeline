@@ -40,7 +40,7 @@ The analysis is documented in the following stages:
 - Evaluation of column cardinality and identification of fields suitable for categorical encoding to improve memory efficiency and analytical performance.  
   Investigation of numerical distributions and categorical value patterns. <br>
 [PANDAS_ANALYSIS/dtypes_and_optimalization.ipynb](PANDAS_ANALYSIS/dtypes_and_optimalization.ipynb) <br>
-- Feature Engineering (adding new columns based on correlations) and further cleaning of columns names. <br>
+- Feature Engineering (adding new columns based on correlations) and further cleaning of column names. <br>
 [PANDAS_ANALYSIS/Correlations_feature_engineering.ipynb](PANDAS_ANALYSIS/Correlations_feature_engineering.ipynb)
 
 
