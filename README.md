@@ -39,10 +39,11 @@ The analysis is documented in the following stages:
 [PANDAS_ANALYSIS/duplicates_analysis.ipynb](PANDAS_ANALYSIS/duplicates_analysis.ipynb) <br>
 - Evaluation of column cardinality and identification of fields suitable for categorical encoding to improve memory efficiency and analytical performance.  
   Investigation of numerical distributions and categorical value patterns. <br>
-[PANDAS_ANALYSIS/dtypes_and_optimalization.ipynb](PANDAS_ANALYSIS/dtypes_and_optimalization.ipynb)
+[PANDAS_ANALYSIS/dtypes_and_optimalization.ipynb](PANDAS_ANALYSIS/dtypes_and_optimalization.ipynb) <br>
+- Feature Engineering (adding new columns based on correlations) and further cleaning of columns names. <br>
+[PANDAS_ANALYSIS/Correlations_feature_engineering.ipynb](PANDAS_ANALYSIS/Correlations_feature_engineering.ipynb)
 
-**TO BE CONTINUED**
-<br>
+
 
 Based on the initial analysis, I implemented several utility functions in VS Code to automate the cleaning process: <br>
 - **Row Cleanup:** Drops rows consisting entirely of missing values. <br>
@@ -50,6 +51,7 @@ Based on the initial analysis, I implemented several utility functions in VS Cod
 - **Selective Column Removal:** Removes specified columns only if they exist in the dataset, ensuring pipeline robustness across schema variations. <br>
 - **Schema-Aware Type Casting:** Enables controlled casting of selected columns to specified data types with configurable error handling. <br>
 - **Flexible Missing Data Handling**: Supports both constant value replacement and aggregation-based imputation (mean, median, sum, mode) using a configuration-driven approach. <br>
+- **Feature Engineering and Stripping column names**: Additional features were engineered to improve analytical capabilities and prepare the dataset for dimensional modeling. These derived attributes help support time-based analysis, pricing metrics, and simplified business categorizations.
 
 Full implementation: [src/transform.py](src/transform.py)
 
