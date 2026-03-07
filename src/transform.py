@@ -11,6 +11,7 @@ Applies predefined cleaning and schema transformations:
 - Casts columns to specified data types
 - Fills missing values using operations (mean/sum/mode/median) or specific values (ex: Unknown, 0, IR)
 - Drops selected duplicates based on grain
+- Creates new columns based on correlations between data
 '''
     
 class DataTransformer():
@@ -19,7 +20,7 @@ class DataTransformer():
         df = self.clean_all_nulls(df) # drop all rows with all null values
         df = self.lower_column_name(df) # lower all column names
         df = self.delete_all_column(df, ['unnamed: 22', 'axz', 'fulfilled-by', 'promotion-ids']) # delete pointed columns
-        df = self.retype_col_value(df, 'Int64', 'ship-postal-code')
+        df = self.retype_col_value(df, 'Int64', ['ship-postal-code'])
         df = self.fill_missing_values_value(df, {'currency':'INR',
                                                  'courier status': 'Unknown',
                                                  'ship-city': 'Unknown',
@@ -28,7 +29,6 @@ class DataTransformer():
                                                  'ship-postal-code': 0})
         df = self.fill_missing_values_operation(df, {'amount':'mean'})
         df = self.drop_duplicates(df, ['order id', 'sku'])
-        # df = self.retype_col_value(df, 'datetime', 'date') <------ to correct
         df = self.retype_col_value(df, 'category', ['status', 'fulfilment', 'ship-service-level',
                                         'category', 'size', 'courier status',
                                         'currency', 'ship-state', 'ship-country'])
