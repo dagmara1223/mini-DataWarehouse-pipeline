@@ -8,20 +8,24 @@ It simulates a production-style architecture with:
 
 The goal of the project is to demonstrate data modeling, ETL design, and warehouse loading strategies in a realistic scenario. 🤖 <br>
 <br>
-**Desired Pipeline**: 
+**Desired ETL Pipeline**: 
 ```
 Synthetic data (CSV)
         ↓
-Python ETL (extract, transform, load)
+EDA / profiling
         ↓
-MySQL (staging layer)
+cleaning + feature engineering
         ↓
-MySQL (Data Warehouse – star schema)
+staging dataframe
+        ↓
+dimensional modeling (Star Schema)
+        ↓
+load to warehouse
         ↓
 Dashboard / SQL analysis
 ```
 
-## 1️⃣ Extracting CSV Data  
+## 1️⃣ Extracting CSV Data (E)
 This project uses an **E-commerce dataset**, which provides a realistic business scenario for designing and evaluating Data Warehouse models.
 The dataset is particularly suitable for schema modeling (Star Schema or Snowflake Schema) due to its relational structure, including orders, customers, and products.
 The raw dataset is stored in the `data/source` directory.
@@ -30,7 +34,7 @@ Link to the dataset: https://www.kaggle.com/datasets/thedevastator/unlock-profit
 Results after this step:  <br>
 <img width="381" height="125" alt="image" src="https://github.com/user-attachments/assets/dd9db1fa-a66b-4072-b5a3-74bd8cdad8f9" />
 
-## 2️⃣ Data Transformation 
+## 2️⃣ Data Transformation (T)
 Before implementing core functions in Visual Studio Code, I conducted a thorough data exploration using Google Colab to better understand the dataset's structure and quality.
 The analysis is documented in the following stages: 
 - Data Overview & Missing Values: Detailed inspection of data types and null values. <br> 
@@ -55,7 +59,17 @@ Based on the initial analysis, I implemented several utility functions in VS Cod
 These transformations enable time-based analysis, pricing calculations, and simplified business categorization.
 Column names were also standardized by removing unnecessary spaces and applying a consistent naming convention.
 
-Full implementation: [src/transform.py](src/transform.py)    
+Full implementation: [src/transform.py](src/transform.py)     
+Resultats after ET process: <br>
+<img width="745" height="591" alt="image" src="https://github.com/user-attachments/assets/0e9f0da9-711f-4163-a539-2f7134723e3f" />  <br>
+
+Columns: <br>
+<img width="500" height="125" alt="image" src="https://github.com/user-attachments/assets/6ad8bf94-7db1-461e-8f4e-b61c0a4e38a4" />  <br>
+
+First 10 rows: <br>
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/1dbebe08-1950-4f85-81aa-97e64f769cda" />
+
+
 
 **TO BE CONTINUED**
 
