@@ -133,7 +133,7 @@ class DataTransformer():
         return df
 
     def adding_data_values(self, df: pd.DataFrame) -> pd.DataFrame:
-        df['date'] = pd.to_datetime(df['date'])
+        df['date'] = pd.to_datetime(df['date'], format="%m-%d-%y")
 
         df['year'] = df['date'].dt.year
         df['month'] = df['date'].dt.month
