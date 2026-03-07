@@ -70,7 +70,6 @@ First 10 rows: <br>
 <img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/1dbebe08-1950-4f85-81aa-97e64f769cda" />
 
 ## 3️⃣ Dimensional Modeling – Star Schema 
-## Dimensional Modeling – Star Schema
 
 After the data cleaning and transformation stage, a dimensional model was designed to support analytical queries in the Data Warehouse. <br>
 A **Star Schema** was implemented, consisting of one fact table and multiple dimension tables. <br>
@@ -88,7 +87,8 @@ The following dimension tables were created:
 - **dim_location** – shipping location details 
 - **dim_channel** – order fulfilment, sales channel, and delivery information
 
-The schema was designed using **DBML** and code can be found in: <br>
+The schema was designed using **DBML** and code can be found in: <br> 
+[database_schema/star_schema.dbml](database_schema/star_schema.dbml)
 
 Results: <br>
 <img width="900" height="840" alt="image" src="https://github.com/user-attachments/assets/b952efb4-41b6-4d29-8156-c5bc41126401" />
