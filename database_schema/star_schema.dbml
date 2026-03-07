@@ -1,0 +1,49 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table fact_orders {
+  order_item_key int [pk]
+  order_id varchar(100)
+  date_id int [ref: > dim_date.date_id]
+  product_id int [ref: > dim_product.product_id]
+  location_id int [ref: > dim_location.location_id]
+  channel_id int [ref: > dim_channel.channel_id]
+  qty int
+  amount float
+  unit_price float
+}
+Table dim_date{
+  date_id pk
+  date date
+  year int
+  month int
+  day int
+  week int
+}
+Table dim_product{
+  product_id pk
+  category varchar(50)
+  size varchar(10)
+  style varchar(50)
+  sku varchar(100)
+  asin varchar(50)
+}
+Table dim_location{
+  location_id pk
+  ship_city varchar(100)
+  ship_state varchar(100)
+  ship_postal_code varchar(100)
+  ship_country varchar(10)
+}
+Table dim_channel{
+  channel_id pk
+  status varchar(50)
+  fulfilment varchar(50)
+  sales_channel varchar(20)
+  courier_status varchar(30)
+  currency varchar(50)
+  order_type varchar(4)
+  ship_service_level varchar(50)
+}
+
+
