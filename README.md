@@ -8,21 +8,26 @@ It simulates a production-style architecture with:
 
 The goal of the project is to demonstrate data modeling, ETL design, and warehouse loading strategies in a realistic scenario. 🤖 <br>
 <br>
-**Desired ETL Pipeline**: 
+**Full ETL Pipeline**: 
 ```
-Synthetic data (CSV)
-        ↓
-EDA / profiling
-        ↓
-cleaning + feature engineering
-        ↓
-staging dataframe
-        ↓
-dimensional modeling (Star Schema)
-        ↓
-load to warehouse
-        ↓
-Dashboard / SQL analysis
+Raw Data (CSV)
+      ↓
+Extract
+      ↓
+Data Transformation
+(Cleaning + Feature Engineering)
+      ↓
+Staging Layer (MySQL - stg_orders)
+      ↓
+Dimensional Modeling
+(Star Schema)
+      ↓
+Data Warehouse Tables
+(dimensions + fact table)
+      ↓
+Change Data Capture
+      ↓
+Analytics / SQL Queries
 ```
 
 ## 1️⃣ Extracting CSV Data (E)
@@ -114,7 +119,8 @@ where:
 **Effect in MySQL Workbench**: <br>
 <img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/8c93a3aa-9a8d-46c0-a470-b94346dccfde" />
 
-
+## 5️⃣ DataWarehouse modeling 
+Based on previously created **Star Schema**, following **Fact Table** and **Dimension Tables** were created in MySQL Workbench: 
 
 **TO BE CONTINUED**
 
