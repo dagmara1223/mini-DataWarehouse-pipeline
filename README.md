@@ -121,6 +121,11 @@ where:
 
 ## 5️⃣ DataWarehouse modeling 
 Based on previously created **Star Schema**, following **Fact Table** and **Dimension Tables** were created in MySQL Workbench: 
+1. Product Dimension Table: [database_schema/dim_product.sql](database_schema/dim_product.sql)
+2. Date Dimension Table: [database_schema/dim_date.sql](database_schema/dim_date.sql)
+3. Location Dimenstion Table: [database_schema/dim_location.sql](database_schema/dim_location.sql)
+4. Channel Dimenstion Table: [database_schema/dim_channel.sql](database_schema/dim_channel.sql)
+5. Fact Table: 
 
 **TO BE CONTINUED**
 
