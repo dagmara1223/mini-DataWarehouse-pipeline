@@ -1,6 +1,7 @@
 from src.extract import DataExtractor
 from src.transform import DataTransformer
 from src.to_dataframe import CSVReader
+from src.loader import DataLoader
 
 def main():
     # extract = DataExtractor(source_dir='data/source', destination_dir='data/raw')
@@ -16,7 +17,10 @@ def main():
     
     transformer = DataTransformer()
     df_transformed = transformer.main_transform(df_copy)
-    print(df_transformed.columns)
+    
+    # connect to database 
+    loader = DataLoader(user="your_user", password="your_password", host="localhost", database="mini_dwh")
+    loader.load_to_staging(df_transformed, "stg_orders")
 
 if __name__=='__main__':
     main()
