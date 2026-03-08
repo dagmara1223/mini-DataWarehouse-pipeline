@@ -108,7 +108,12 @@ where:
 - Transform cleans and enriches the dataset
 - Load inserts the processed data into the staging table in MySQL
 
-<img width="431" height="51" alt="image" src="https://github.com/user-attachments/assets/67d2623a-6592-4b75-bf33-2eeb166a56cc" />
+<img width="431" height="51" alt="image" src="https://github.com/user-attachments/assets/67d2623a-6592-4b75-bf33-2eeb166a56cc" /> <br>
+
+
+**Effect in MySQL Workbench**: <br>
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/8c93a3aa-9a8d-46c0-a470-b94346dccfde" />
+
 
 
 **TO BE CONTINUED**
