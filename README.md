@@ -93,6 +93,10 @@ The schema was designed using **DBML** and code can be found in: <br>
 Results: <br>
 <img width="900" height="840" alt="image" src="https://github.com/user-attachments/assets/b952efb4-41b6-4d29-8156-c5bc41126401" />
 
+## 4️⃣ Staging Layer and Data Loading (L)
+As part of the Data Warehouse pipeline, a staging table was created in MySQL Workbench to store the transformed dataset before building the dimensional model. SQL script is available here: [database_schema/std_order.sql](database_schema/std_order.sql) <br>
+Such script defines the structure of staging table used to temporairly hold cleaned and enriched data produced by transformation pipeline. <br>
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/3ab63a99-7763-4b22-863d-813fb36b8884" />
 
 **TO BE CONTINUED**
 
