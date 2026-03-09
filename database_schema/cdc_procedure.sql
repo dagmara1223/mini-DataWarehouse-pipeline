@@ -3,7 +3,7 @@ USE mini_dwh;
 DELIMITER //
 CREATE PROCEDURE cdc_fact_orders()
 BEGIN
-	#inserting
+	#inserting - if such order is not inside fact_orders then insert it to fact_orders table 
 	INSERT INTO fact_orders(order_id, date_id, product_id, location_id, channel_id, qty, amount, unit_price)
 	SELECT 
 		s.order_id,
@@ -40,14 +40,14 @@ BEGIN
 	AND s.order_type = c.order_type
 	AND s.ship_service_level = c.ship_service_level
     WHERE NOT EXISTS(SELECT 1 FROM fact_orders f WHERE f.order_id = s.order_id);
-    #updating records
+    #updating records - if order inside two tables then you may update it
     UPDATE fact_orders f
 	JOIN stg_orders s
 	ON f.order_id = s.order_id
 	SET
 	f.qty = s.qty,
 	f.amount = s.amount;
-    #deleting records
+    #deleting records - if order only in fact table but not in stg_orders then delete it
     DELETE f
 	FROM fact_orders f
 	LEFT JOIN stg_orders s
