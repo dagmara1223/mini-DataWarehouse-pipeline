@@ -124,7 +124,7 @@ Based on previously created **Star Schema**, following **Fact Table** and **Dime
 1. Product Dimension Table: [database_schema/dim_product.sql](database_schema/dim_product.sql)
 2. Date Dimension Table: [database_schema/dim_date.sql](database_schema/dim_date.sql)
 3. Location Dimension Table: [database_schema/dim_location.sql](database_schema/dim_location.sql)
-4. Channel Dimenstion Table: [database_schema/dim_channel.sql](database_schema/dim_channel.sql)
+4. Channel Dimension Table: [database_schema/dim_channel.sql](database_schema/dim_channel.sql)
 5. Fact Table: [database_schema/fact_orders.sql](database_schema/fact_orders.sql)
 
 Our fact table : <br>
