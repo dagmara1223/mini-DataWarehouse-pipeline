@@ -100,7 +100,7 @@ Results: <br>
 
 ## 4️⃣ Staging Layer and Data Loading (L)
 As part of the Data Warehouse pipeline, a staging table was created in MySQL Workbench to store the transformed dataset before building the dimensional model. SQL script is available here: [database_schema/std_order.sql](database_schema/std_order.sql) <br>
-Such script defines the structure of staging table used to temporairly hold cleaned and enriched data produced by transformation pipeline. <br>
+Such script defines the structure of staging table used to temporaily hold cleaned and enriched data produced by transformation pipeline. <br>
 <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/3ab63a99-7763-4b22-863d-813fb36b8884" />  <br>
 
 **Python Data Loader**  <br>
@@ -123,13 +123,17 @@ where:
 Based on previously created **Star Schema**, following **Fact Table** and **Dimension Tables** were created in MySQL Workbench: 
 1. Product Dimension Table: [database_schema/dim_product.sql](database_schema/dim_product.sql)
 2. Date Dimension Table: [database_schema/dim_date.sql](database_schema/dim_date.sql)
-3. Location Dimenstion Table: [database_schema/dim_location.sql](database_schema/dim_location.sql)
+3. Location Dimension Table: [database_schema/dim_location.sql](database_schema/dim_location.sql)
 4. Channel Dimenstion Table: [database_schema/dim_channel.sql](database_schema/dim_channel.sql)
 5. Fact Table: [database_schema/fact_orders.sql](database_schema/fact_orders.sql)
 
 Our fact table : <br>
 <img width="700" height="601" alt="image" src="https://github.com/user-attachments/assets/e117953b-3685-4510-ab66-085c1df41c00" />
 
+## 6️⃣ CDC - Change Data Capture 
+To avoid reloading the entire dataset during each internal piepline run, a manual Change Data Capture (CDC) mechanism was implemented. <br>
+The goal is to load only new records from the staging table (stg_orders) into the fact table (fact_orders). Instead of performing a full refresh of the fact table, the pipeline compares records from the staging layer with existing records in the data warehouse. <br> 
+Only records that do not yet exist in the fact table are inserted. Such approach is being implemented using **Stored Procedures**. 
 
 **TO BE CONTINUED**
 
