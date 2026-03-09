@@ -133,7 +133,9 @@ Our fact table : <br>
 ## 6️⃣ CDC - Change Data Capture 
 To avoid reloading the entire dataset during each internal piepline run, a manual Change Data Capture (CDC) mechanism was implemented. <br>
 The goal is to load only new records from the staging table (stg_orders) into the fact table (fact_orders). Instead of performing a full refresh of the fact table, the pipeline compares records from the staging layer with existing records in the data warehouse. <br> 
-Only records that do not yet exist in the fact table are inserted. Such approach is being implemented using **Stored Procedures**. 
+Only records that do not yet exist in the fact table are inserted. Such approach is being implemented using **Stored Procedures**.  
+[database_schema/cdc_procedure.sql](database_schema/cdc_procedure.sql) <br>
+
 
 **TO BE CONTINUED**
 
