@@ -138,6 +138,19 @@ Only records that do not yet exist in the fact table are inserted. Such approach
 
 To use such procedure: <img width="378" height="66" alt="image" src="https://github.com/user-attachments/assets/90089446-43b0-4bb9-95f6-3f23fde49c96" />
 
+## 7️⃣ Additional SQL Analysis 
+Example analytical queries were executed on the Star Schema to demonstrate how the Data Warehouse can support business insights. <br>
+[database_schema/additional_analysis.sql](database_schema/additional_analysis.sql) <br>
+
+The queries analyze:
+- Top selling category: <br>
+<img width="408" height="255" alt="image" src="https://github.com/user-attachments/assets/dbf80cc5-a621-42a9-bd19-3ee8e609f66b" /> <br>
+- Sales by month:  <br>
+<img width="312" height="134" alt="image" src="https://github.com/user-attachments/assets/92fa13b1-a273-42a2-ad7e-f1435603ec5c" /> <br>
+- Top 3 products in each month: <br>
+<img width="312" height="301" alt="image" src="https://github.com/user-attachments/assets/a75e979d-1e01-4a52-a397-d69828ed3a3a" /> <br>
+- Comparison with global average: <br>
+...
 
 **TO BE CONTINUED**
 
