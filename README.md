@@ -136,6 +136,8 @@ The goal is to load only new records from the staging table (stg_orders) into th
 Only records that do not yet exist in the fact table are inserted. Such approach is being implemented using **Stored Procedures**.  
 [database_schema/cdc_procedure.sql](database_schema/cdc_procedure.sql) <br>
 
+To use such procedure: <img width="378" height="66" alt="image" src="https://github.com/user-attachments/assets/90089446-43b0-4bb9-95f6-3f23fde49c96" />
+
 
 **TO BE CONTINUED**
 
