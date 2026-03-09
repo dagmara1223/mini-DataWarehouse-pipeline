@@ -125,7 +125,11 @@ Based on previously created **Star Schema**, following **Fact Table** and **Dime
 2. Date Dimension Table: [database_schema/dim_date.sql](database_schema/dim_date.sql)
 3. Location Dimenstion Table: [database_schema/dim_location.sql](database_schema/dim_location.sql)
 4. Channel Dimenstion Table: [database_schema/dim_channel.sql](database_schema/dim_channel.sql)
-5. Fact Table: 
+5. Fact Table: [database_schema/fact_orders.sql](database_schema/fact_orders.sql)
+
+Our fact table : <br>
+<img width="700" height="601" alt="image" src="https://github.com/user-attachments/assets/e117953b-3685-4510-ab66-085c1df41c00" />
+
 
 **TO BE CONTINUED**
 
