@@ -26,3 +26,30 @@ WITH monthly_product_sales AS(
 		ROW_NUMBER() OVER(PARTITION BY year, month ORDER BY unit_price DESC) AS ranks
 		FROM monthly_product_sales)
 SELECT * FROM ordered_monthly_prods WHERE ranks <= 3;
+
+# Comparison with global avg
+
+SELECT ship_state, total_sales 
+FROM (
+	SELECT l.ship_state, ROUND(SUM(f.amount),2) AS total_sales
+	FROM fact_orders f 
+		JOIN dim_location l ON l.location_id = f.location_id
+	GROUP BY l.ship_state) state_sales
+WHERE total_sales > (
+	SELECT AVG(state_total) FROM (
+									SELECT SUM(f.amount) AS state_total FROM 	
+                                    fact_orders f JOIN dim_location l ON l.location_id = f.location_id
+                                    GROUP BY l.ship_state
+                                    ) avg_table
+)
+ORDER BY total_sales DESC;
+
+# b2b vs b2c shares
+WITH order_type AS(
+	SELECT c.order_type, ROUND(SUM(f.amount),2) AS amount
+	FROM fact_orders f 
+		JOIN dim_channel c ON c.channel_id = f.channel_id 
+	GROUP BY c.order_type),
+    total_sales AS (SELECT ROUND(SUM(amount),2) AS total_order_sales FROM order_type)
+SELECT o.order_type, o.amount, ROUND(o.amount/ t.total_order_sales * 100, 2) AS sales_share
+FROM order_type o CROSS JOIN total_sales t;
