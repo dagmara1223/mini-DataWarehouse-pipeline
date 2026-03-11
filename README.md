@@ -150,8 +150,9 @@ The queries analyze:
 - Top 3 products in each month: <br>
 <img width="312" height="301" alt="image" src="https://github.com/user-attachments/assets/a75e979d-1e01-4a52-a397-d69828ed3a3a" /> <br>
 - Comparison with global average: <br>
-...
+<img width="273" height="289" alt="image" src="https://github.com/user-attachments/assets/4c8a2174-f614-477d-8fe3-bcd21428e990" /> <br>
+- B2B, B2C shares <br>
+<img width="379" height="85" alt="image" src="https://github.com/user-attachments/assets/afb693b7-e314-41f9-a925-687d2a722180" />
 
-**TO BE CONTINUED**
 
 
